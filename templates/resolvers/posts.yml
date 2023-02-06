@@ -1,0 +1,34 @@
+Query.getPost:
+  functions:
+    - dataSource: posts
+      code: resolvers/Query.getPost.js
+
+Query.getAllPosts:
+  functions:
+    - dataSource: posts
+      code: resolvers/Query.getAllPosts.js
+
+Query.getPosts:
+  functions:
+    - dataSource: posts
+      code: resolvers/Query.getPosts.js
+
+Post.comments:
+  functions:
+    - dataSource: comments
+      code: resolvers/Post.comments.js
+
+Mutation.createPost:
+  functions:
+    - dataSource: posts
+      code: resolvers/Mutation.createPost.js
+
+Mutation.updatePost:
+  functions:
+    - dataSource: posts
+      code: resolvers/Mutation.updatePost.js
+
+Mutation.deletePost:
+  functions:
+    - dataSource: posts
+      code: resolvers/Mutation.deletePost.js

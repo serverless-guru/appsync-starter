@@ -1,0 +1,4 @@
+Mutation.createComment:
+  functions:
+    - dataSource: comments
+      code: resolvers/Mutation.createComment.js

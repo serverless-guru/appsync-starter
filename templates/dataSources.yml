@@ -1,0 +1,14 @@
+posts:
+  type: AMAZON_DYNAMODB
+  config:
+    tableName: !Ref Posts
+
+authors:
+  type: AMAZON_DYNAMODB
+  config:
+    tableName: !Ref Authors
+
+comments:
+  type: AMAZON_DYNAMODB
+  config:
+    tableName: !Ref Comments

@@ -1,0 +1,29 @@
+# name of the API
+name: cloudgto-blogs-api
+
+# log level for API
+logging:
+  level: ERROR # NONE | ERROR | ALL
+
+authentication:
+  # or API_KEY
+  # see https://github.com/sid88in/serverless-appsync-plugin/blob/alpha/doc/authentication.md
+  type: AMAZON_COGNITO_USER_POOLS
+  config:
+    userPoolId: !Ref CognitoUserPool
+    defaultAction: ALLOW
+
+# data sources
+# see https://github.com/sid88in/serverless-appsync-plugin/blob/alpha/doc/dataSources.md
+# We can probably create one for each dynamodb table in the stack
+# or try to deduce them from the resolvers
+dataSources:
+  - ${file(templates/dataSources.yml)}
+
+# resolvers
+# see https://github.com/sid88in/serverless-appsync-plugin/blob/alpha/doc/resolvers.md
+# one entry for each Query/Mutation with a data source attached
+resolvers:
+  - ${file(templates/resolvers/posts.yml)}
+  - ${file(templates/resolvers/authors.yml)}
+  - ${file(templates/resolvers/comments.yml)}

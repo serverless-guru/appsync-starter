@@ -1,0 +1,9 @@
+Query.getAuthor:
+  functions:
+    - dataSource: authors
+      code: resolvers/Query.getAuthor.js
+
+Mutation.createAuthor:
+  functions:
+    - dataSource: authors
+      code: resolvers/Mutation.createAuthor.js
